@@ -1,0 +1,23 @@
+﻿<Window
+    x:Class="TestListBoxWithTextBox.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="MainWindow"
+    >
+    <StackPanel>
+        <ListBox
+            ItemsSource="{Binding Items}"
+            SelectedItem="{Binding SelectedItem}"
+            >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBox Text="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button
+            Content="Add"
+            Command="{Binding AddItemCommand}"
+            />
+    </StackPanel>
+</Window>
